@@ -1,14 +1,15 @@
 # Terminal and Git Command Line Cheat Sheet!
 
-# Terminal Basics: 
+# Terminal Basics
 
 - The tilde key `~` indicates the home directory.
 >Tip! Typing ~ on its own will return you to the machine's home directory (you can also type cd).
 - A fullstop `.` indicates the current directory.
 - 2 fullstops `..` is the parent directory of the current directory, AKA, the child.
+- You can use shell operators, like `&&`, to chain commands together.
 
 
-## Navigating the terminal:
+## Navigating the terminal
 ### `cd`:
 
 - `cd` stands for `c`hange `d`irectory which will navigate to the chosen directory - e.g. Navigating from **~** ***(home directory)*** to the directory **Documents**:
@@ -67,5 +68,54 @@
     | ls -S     | Sort by file size |
     | ls -r   |  List in reverse       |
     
+## Creating and modifying files/folders
+### Creating:
+### `mkdir`:
+- `mkdir` stands for `m`a`k`e `dir`ectory and will create a directory within the current directory - e.g. Creating a directory **week_02** in **coursework** and lists the directories:
 
-<!-- > According to [DopeGhoti](https://unix.stackexchange.com/questions/355168/what-does-touch-stand-for) on StackOverflow, `touch`ing a file is named as such because you're "putting fresh fingerprints on it." -->
+    input:
+    ```
+    → coursework mkdir week_02 && ls
+    ```
+    output:
+    ```
+    week_01       week_02
+    ```
+
+### `touch`:
+- `touch` will create a file within the current directory - e.g. Creating a file **test.txt** in **week_01** and lists the directories:
+
+    input:
+    ```
+    → week_01 touch test.txt && ls
+    ```
+    output:
+    ```
+    day_02       test.txt
+    ```
+    
+    > According to [DopeGhoti](https://unix.stackexchange.com/questions/355168/what-does-touch-stand-for) on StackOverflow, `touch`ing a file is named as such because you're "putting fresh fingerprints on it."
+
+### Modifying:
+### `mv`:
+- `mv` stands for `m`o`v`e and will move a file to a different directory - e.g. Moving **test.txt** in **week_01** to **week_02**:
+
+    input:
+    ```
+    → week_01 mv test.txt ~/Documents/__BNTA__/courseworks/week_02
+    ```
+    in **week_02**:
+    ```
+    test.txt
+    ```
+
+- `mv` can be used to rename files - e.g. Renaming **test.txt** to **anothertest.txt**:
+
+    input:
+    ```
+    → week_02 mv test.txt anothertest.txt && ls
+    ```
+    output:
+    ```
+    anothertest.txt
+    ```
