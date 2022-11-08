@@ -12,7 +12,7 @@
 ## Navigating the terminal
 ### `cd`:
 
-- `cd` stands for `c`hange `d`irectory which will navigate to the chosen directory - e.g. Navigating from **~** ***(home directory)*** to the directory **Documents**:
+- `cd` stands for `c`hange `d`irectory and will navigate to the chosen directory - e.g. Navigating from **~** ***(home directory)*** to the directory **Documents**:
     
     input:
     ```
@@ -231,3 +231,5 @@ To create a Git repository, a base directory is needed. This can be a new dir, c
     2. `git commit -m "_____"`
     3. `git push`
 
+### `.gitignore`:
+- `touch .gitingore` will create a `.gitignore` file which allows hide specific files/folders from being pushed to GitHub. The file itself will still be tracked.
