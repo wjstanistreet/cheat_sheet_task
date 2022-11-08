@@ -6,7 +6,7 @@
 >Tip! Typing ~ on its own will return you to the machine's home directory (you can also type cd).
 - A fullstop `.` indicates the current directory.
 - 2 fullstops `..` is the parent directory of the current directory, AKA, the child.
-- You can use shell operators, like `&&`, to chain commands together.
+- You can use shell logic operators, like `&&`, to chain commands together.
 
 
 ## Navigating the terminal
@@ -36,6 +36,17 @@
     ```
     >Tip! Pressing tab **⇥** will autocomplete what you're typing.
     >If the directory has multiple autocomplete options, use **⇥** to navigate through them. 
+
+- Using a `-` after `cd` will return to the parent directory - e.g. Navigating from **__BNTA__** to **Documents**:
+
+    input:
+    ```
+    → __BNTA__ cd - 
+    ```
+    output:
+    ```
+    → Documents
+    ```
 
 ### `ls`:
 
@@ -119,3 +130,29 @@
     ```
     anothertest.txt
     ```
+
+### Removing:
+### `rm`:
+- `rm` stands for `r`e`m`ove and will remove a selected file in the current directory - e.g. Removing **anothertest.txt** in **week_02**:
+
+    input:
+    ```
+    → week_02 rm anothertest.txt && ls
+    ```
+    output:
+    ```
+    
+    ```
+
+    - To remove a directory you need to recursively remove everything contained within it. This can be done by adding `-r` after `rm` - e.g. Removing **week_02** from **coursework**:
+
+    input:
+    ```
+    → coursework rm -r week_02 && ls
+    ```
+    output:
+    ```
+    week_01
+    ```
+
+
