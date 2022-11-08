@@ -4,7 +4,7 @@
 
 - The tilde key `~` indicates the home directory.
 >Tip! Typing ~ on its own will return you to the machine's home directory (you can also type cd).
-- A fullstop `.` indicates the current directory.
+- A fullstop `.` indicates the current directory or selects everything within.
 - 2 fullstops `..` is the parent directory of the current directory, AKA, the child.
 - You can use shell logic operators, like `&&`, to chain commands together.
 
@@ -155,4 +155,79 @@
     week_01
     ```
 
+
+# Git Commands:
+
+Git allows a developer to track and manage changes of their software via *version control*. By exporting to GitHub, code can be sent to the cloud which safeguards it, while allowing other devs to view and work on each other's code.  
+
+Git can be controlled through the terminal using functions defined by Git.
+
+## Setup:
+To create a Git repository, a base directory is needed. This can be a new dir, created using `mkdir`, or an prexisting dir. 
+
+1. Firstly, navigate to your chosen directory and intialise it using `git init`.
+
+### `git init`:
+- `git init` will initialise the current directory, creating a new git repo - e.g. Initlisation of **cheat_sheet_task**:
+
+    input:
+    ```
+    → cheat_sheet_task git init
+    ```
+    output:
+    ```
+    Initialized empty Git repository in /Users/willsmacbook/Documents/__BNTA__/coursework/week_01/day_02/cheat_sheet_task/.git/
+    → cheat_sheet_task git:(main)
+    ```
+
+
+2. The files within the new repo need to be 'staged' and can be added using `git add`.
+
+### `git add`:
+- `git add` will add a single or multiple files to the stage - e.g. Adding all files from **cheat_sheet_task**:
+
+    input:
+    ```
+    → cheat_sheet_task git:(main) git add .
+    ```
+    output:
+    ```
+    → cheat_sheet_task git:(main) 
+    ``` 
+    > A single file can be added by specifying the file itself - e.g. `git add cheat_sheet_task.md`.
+
+
+3. Any changes that are added to the stage can be finalised locally by `commit`ing the changes to git.
+
+### `git commit`:
+- `git commit` will commit all staged changes to the local repo. It's common practice to add a message to the commit to document what has been changed. This is done by adding the flag `-m` followed by the message as a string - e.g. Commiting all staged files from **cheat_sheet_task**:
+
+    input:
+    ```
+    → cheat_sheet_task git:(main) git commit -m "Commit message"
+    ```
+    output: (where N is a number)
+    ```
+    [main #######] Commit message
+    N file changed, N insertions(+), N deletions(-)
+    ``` 
+    
+4. Once the first commit is done, a repo needs to be created on a GitHub. After a remote repo is created, it needs to be connected to your local repo using `git remote add origin 'Github repo address'`, followed by `git push origin main` to push the local files
+
+### `git push`:
+- `git push` will push all comitted changes from the local repo to a remote repo - e.g. Pushing all commited files from **cheat_sheet_task**:
+
+    input:
+    ```
+    → cheat_sheet_task git:(main) git push
+    ```
+    output:
+    ```
+
+    ``` 
+
+5. Any changes to your local repo can be pushed to your remote repo by repeating this process, starting with:
+    1. `git add .`
+    2. `git commit -m "_____"`
+    3. `git push`
 
